@@ -1,5 +1,5 @@
 import AppLayout from '@/layout/AppLayout'
-import MaterialManage from '@/pages/home/list'
+import Home from '@/pages/home'
 import NotFoundPage from '@/pages/404'
 import { AppstoreAddOutlined } from '@ant-design/icons'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
@@ -10,13 +10,16 @@ import { IRouteItem } from '@@/types/index'
  */
 export const dynamicRoutes: IRouteItem[] = [
   {
-    path: 'materialManage',
+    path: '/home',
     component: <AppLayout />,
+    meta: { title: '菜单' },
     children: [
       {
-        path: 'materialList',
-        component: <MaterialManage />,
+        path: '',
+        component: <Home />,
         meta: {
+          title: '子菜单',
+          hidden: true,
           icon: <AppstoreAddOutlined />
         }
       }

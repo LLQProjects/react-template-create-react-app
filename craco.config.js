@@ -12,6 +12,9 @@ const pathResolve = (dir) => {
 }
 
 module.exports = {
+  devServer: {
+    port: 9524
+  },
   webpack: {
     alias: {
       '@': pathResolve('src/'),
